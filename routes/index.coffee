@@ -11,7 +11,7 @@ markdown = require('github-flavored-markdown').parse
 uglifycss = require 'uglifycss/uglifycss-lib'
 
 moment = require "moment"
-walk = require '../lib/walk'
+walk = require "walk"
 
 class Post 
 
@@ -25,7 +25,7 @@ module.exports =
             el.body = markdown el.body
 
       res.render "index",
-        title: "yadev - yet another dev blog"
+        title: "Ironpress"
         posts: result
         theme: folder: "default"
 
@@ -33,8 +33,8 @@ module.exports =
     db_posts.findOne 'title': req.params.post_title
     , (err, result) ->
       if err or result == null
-        res.render 'err'
-          title: 'damnit',
+        res.render 'err',
+          title: 'damnit'
           error: "couldnt find post '#{req.params.post_title}'"
       else
         result.ts = moment(result.timestamp).fromNow()
@@ -58,7 +58,7 @@ module.exports =
           do (el) ->
             el.ts = moment(el.timestamp).fromNow()
         res.render "index",
-          title: "yadev - " + req.params.category
+          title: "IronPress - " + req.params.category
           posts: result
 
   combineResources: (req, res) ->

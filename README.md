@@ -7,8 +7,8 @@ Small Blog system based on yadev
 
 get coffeescript:
 
-    npm install -g coffee-script
-
+    npm install -g coffee-script marked
+    
 checkout the source:
 
     git clone https://github.com/labmouse-/ironpress.git 

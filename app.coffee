@@ -29,15 +29,15 @@ log_route = (req, res, next) ->
   console.log req.route.path
   next()
 
-app.get "/", log_route, routes.index
-app.get "/res/combined.:type",log_route, routes.combineResources
-app.get "/:post_title", log_route, routes.viewPost
-app.get "/cat/:category", log_route, routes.viewCategory
-app.get "/post/:id", log_route, routes.viewPost
-app.post "/comment/:article_id", routes.addComment
+ app.get "/", log_route, routes.index
+ app.get "/res/combined.:type",log_route, routes.combineResources
+ app.get "/:post_title", log_route, routes.viewPost
+ app.get "/cat/:category", log_route, routes.viewCategory
+ app.get "/post/:id", log_route, routes.viewPost
+ app.post "/comment/:article_id", routes.addComment
 
 app.listen settings.port_frontend || 3000, ->
-  console.log "Yadev frontend listening on port %d in %s mode", app.address().port, app.settings.env
+  console.log "IronPress listening on port %d in %s mode", app.address().port, app.settings.env
 
 ###
 #ADMIN
@@ -53,7 +53,7 @@ app_admin.configure ->
   app_admin.use express.cookieParser()
   app_admin.use express.session(
     secret: "foobar"
-    store: new MongoStore(db: 'yadev')
+    store: new MongoStore(db: 'ironpress')
   )
   app_admin.use app_admin.router
 
@@ -95,4 +95,4 @@ app_admin.get  "/settings", check_session, routes_admin.settings
 app_admin.post  "/settings/save", check_session, routes_admin.settings_save
 
 app_admin.listen settings.port_admin || 3001, ->
-  console.log "Yadev admin listening on port %d in %s mode", app_admin.address().port, app_admin.settings.env
+  console.log "IronPress admin listening on port %d in %s mode", app_admin.address().port, app_admin.settings.env

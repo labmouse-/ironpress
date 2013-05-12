@@ -1,21 +1,16 @@
 {
-    "name": "yadev",
+    "name": "ironpress",
 	"version": "0.0.1",
 	"private": true,
 	"dependencies": {
-    "express": "2.5.8",
-	  "jade": ">= 0.0.1",
+        "express": "2.5.8",
+	    "jade": ">= 0.0.1",
 		"mongoskin": ">= 0.3.6",
+        "connect-mongo": ">=0.1.9",
 		"underscore": ">= 1.3.3",
 		"moment": ">= 1.6.2",
-    "gzippo": ">= 0.1.6",
-    "connect-mongo": ">=0.1.9",
-    "markdown": ">=0.0.1",
-    "gh-markdown": ">=0.0.1",
-    "github-flavored-markdown": "*"
-	},
-	"devDependencies": {
-	"mocha": "1.1.0",
-	"should": "0.6.3"
-  }
+        "gzippo": ">= 0.1.6",
+        "gh-markdown": ">=0.0.1",
+        "github-flavored-markdown": "*"
+	}
 }
