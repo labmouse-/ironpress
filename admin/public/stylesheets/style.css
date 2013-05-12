@@ -1,0 +1,114 @@
+* {
+}
+
+body {
+	font-family: "Bree Serif", "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+button.actions {
+	margin-left: 20px;
+	opacity: 0.5;
+	vertical-align: center;
+}
+
+#content article {
+	margin-top: 30px;
+}
+
+.btn-group.open button.actions {
+	opacity: 1;
+}
+
+button.actions:hover {
+	opacity: 1;
+	transition: opacity .15s ease-in-out;
+	-moz-transition: opacity .15s ease-in-out;
+	-webkit-transition: opacity .15s ease-in-out;
+}
+
+.admin .container {
+  /*margin-top: 50px;*/
+}
+.admin.navbar-fixed-top {
+  margin-bottom: 18px;
+  position: static;
+}
+
+.admin .tpl-container {
+  /*padding-top: 5px;*/
+}
+
+.admin #post, .admin #title {
+  width: 99%;
+}
+
+.add-on [class^="icon-"], .add-on [class*=" icon-"] {
+    vertical-align: middle;
+}
+.admin #ace-editor {
+  position: relative;
+  height: 500px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.admin .ace_sb {
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .admin .nav-admin {
+    width: auto;
+  }
+}
+span.add-on {
+}
+
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+}
+
+@media (max-width: 979px) and (min-width: 768px) {
+  .admin .nav-admin {
+    font-size: 12px;
+  }
+}
+[class^="icon-"], [class*=" icon-"] {
+ /*vertical-align: sub;*/
+ vertical-align: text-top;
+}
+
+.navbar .brand {
+  margin-left: 0;
+}
+
+.foobar .navbar-fixed-top .brand {
+	padding-right: 0;
+	padding-left: 0;
+	margin-left: 20px;
+	font-size: 22px;
+	float: right;
+	font-weight: bold;
+	color: #f2f2f2;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, .1), 0 0 30px rgba(255, 255, 255, .125);
+	-webkit-transition: all .2s linear;
+	-moz-transition: all .2s linear;
+	transition: all .2s linear;
+}
+.dropdown-menu a {
+	cursor: pointer;
+}
+.dropdown-menu a [class^="icon-"], [class*=" icon-"] {
+	margin-top: 2px;
+	margin-right: 2px;
+}
+
+#inputFiles {
+  width: 192px;
+  height: 216px;
+  display: block;
+  -webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}

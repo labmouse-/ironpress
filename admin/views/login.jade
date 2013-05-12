@@ -1,0 +1,33 @@
+.row
+  .span4.offset4
+    - if (actions.error)
+      .alert.alert-error
+        button.close(data-dismiss="alert") ×
+        strong Ooops! 
+        #{actions.error}
+    - if (actions.hint)
+      .alert.alert-info
+        button.close(data-dismiss="alert") ×
+        #{actions.hint}
+    - if (actions.warn)
+      .alert.alert-warn
+        button.close(data-dismiss="alert") ×
+        #{actions.warn}
+
+.row
+  .span4.offset4
+    form(method="post", action="/login")
+      fieldset
+        legend="Login"
+        .clearfix
+          label(for="username") Username
+          .input
+            input#username.span4(type="text", name="post[username]")
+            p.help-block="(admin)"
+        .clearfix
+          label(for="password") Password
+          .input
+            input#password.span4(type="password", name="post[password]")
+            p.help-block="(foobar)"
+        .form-actions
+          input.btn.pull-right.btn-primary(type="submit", value="Login")

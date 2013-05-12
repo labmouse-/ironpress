@@ -1,0 +1,60 @@
+- var action_url = "/articles/save" + (post._id ? '/' + post._id : '');
+
+.admin.navbar.navbar-fixed-top
+  !=partial('top_menu')
+
+.container-fluid
+  .row-fluid
+    .well.span6
+      form(method="post", action="#{action_url}")
+        fieldset
+          legend=title
+          .clearfix
+            label(for="title") Title
+            .input
+              input#title.span(type="text", name="post[title]", value=post.title)
+          .clearfix
+            label(for="post") Post
+            #ace-editor.span
+              !{post.body}
+            input#post(type="hidden", name="post[body]", rows="16")
+          .clearfix
+            .span3
+              .control-group
+                .control-label Article
+                .controls
+                  label.checkbox(for="pin")
+                    input#pin(type="checkbox", name="post[pin]", checked=post.pin)
+                    | Pin
+                  label.checkbox(for="publish")
+                    input#publish(type="checkbox", name="post[publish]", checked=post.publish)
+                    | Publish
+            .span3
+              .control-group
+                .control-label Templating
+                .controls
+                  label.radio
+                    input(type='radio', name="post[templating]", id="templating_markdown", value="markdown", checked=post.templating==='markdown')
+                    | Markdown
+                  label.radio
+                    input(type='radio', name="post[templating]", id="templating_html", value="html", checked=post.templating==='html')
+                    | Html
+          .clearfix
+            .span
+              .control-group
+                .control-label Category
+                .controls
+                  .input-append
+                    input#category(type="text", name="post[category]", data-provide="typeahead", data-items="4", data-source=category_list, value=post.category, autocomplete='off')
+                    span.add-on
+                      i.icon-bookmark
+          .clearfix
+            .span
+              .form-actions
+                input.pull-right.btn.btn-primary(type="submit", value="Save")
+                a.btn(href="/articles") Cancel
+    .well.span6
+      legend
+        |  Preview
+      .preview
+        #{post.body}
